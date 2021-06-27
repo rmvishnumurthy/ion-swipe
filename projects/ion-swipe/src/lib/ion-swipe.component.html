@@ -1,0 +1,51 @@
+<div class="swipe-drawer" #swipeDrawer>
+    <div class="ion-text-center">
+        <ion-button fill="clear" expand="full" (click)="toggle();$event.stopPropagation()">
+            <div *ngIf="expanded" class="swipe-up"></div>
+            <ion-icon *ngIf="!expanded" name="chevron-up"></ion-icon>
+        </ion-button>
+    </div>
+
+    <!-- <ion-content class="drawer-content scroll" scrollY="true"> -->
+    <!-- <ng-content></ng-content> -->
+    <!-- </ion-content> -->
+
+    <ion-content>
+        <ng-content></ng-content>
+        <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item><ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>test 1</ion-label>
+    </ion-item>
+    </ion-content>
+</div>

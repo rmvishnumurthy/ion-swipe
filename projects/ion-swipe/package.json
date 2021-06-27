@@ -1,0 +1,17 @@
+{
+  "name": "ion-swipe",
+  "version": "0.0.1",
+  "author": "Vishnu Murthy R M",
+  "peerDependencies": {
+    "@angular/common": "^12.0.5",
+    "@angular/core": "^12.0.5",
+    "@ionic/angular": "^5.6.10"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/vishnu-fullstack-developer/ion-swipe"
+  }
+}
