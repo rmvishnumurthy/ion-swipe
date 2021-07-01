@@ -1,6 +1,6 @@
 # Ionic 5 - IonSwipe
 
-This library is an ionic 5 gesture library for swipe up & swipe down operations. This library is compitable with [Ionic 5](https://ionicframework.com/#) version 5.6.10 and [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+This library is an ionic 5 gesture library for swipe up & swipe down operations. This library is compitable with [Ionic 5](https://ionicframework.com/#) version 5.6.10 and [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5. Click here for [Live Demo](https://stackblitz.com/edit/ionic-swipe-example).
 
 ## Installation
 

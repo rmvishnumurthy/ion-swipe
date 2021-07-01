@@ -12,13 +12,13 @@ export class IonSwipeComponent implements OnInit {
   swipeElement: HTMLElement;
 
   @Input()
-  collapsedHeight: number | string = '40px';
+  collapsedHeight: number = 40;
 
   @Input()
-  expandedHeight: number | string = '100vh';
+  expandedHeight: number;
 
   @Input()
-  toolbarHeight: number = 150;
+  toolbarHeight: number = 100;
 
   @Input()
   expanded: boolean = false;
@@ -42,7 +42,7 @@ export class IonSwipeComponent implements OnInit {
 
   ngOnInit() { }
 
-  async ngAfterViewInit() {
+  ngAfterViewInit() {
     this.swipeElement = this.swipeDrawer.nativeElement;
     if (this.toolbarHeight) {
       this.expandedHeight = this.platform.height() - this.toolbarHeight;
@@ -57,7 +57,6 @@ export class IonSwipeComponent implements OnInit {
       gestureName: 'swipe',
       direction: 'y',
       onMove: ev => {
-        console.log(`delta  ${ev.deltaY}, ${this.expandedHeight}`)
         if (ev.deltaY < -this.expandedHeight)
           return;
 
@@ -68,24 +67,22 @@ export class IonSwipeComponent implements OnInit {
           return;
 
         this.swipeElement.style.transform = `translateY(${ev.deltaY}px)`;
-        //this.swipeElement.style.height = `50vh`;
       },
       onEnd: ev => {
         if (ev.deltaY < -40 && !this.expanded) {
           this.swipeElement.style.transform = ``;
-          //this.swipeElement.style.transform = `translateY(${-this.expandedHeight}px)`;
           this.swipeElement.style.height = `${this.expandedHeight}px`;
           this.swipeElement.style.boxShadow = `rgb(0 0 0 / 12%) 0px 0px 4px`;
           this.drawerState.emit(SwipeDrawerState.OPENED);
           this.swipeUp.emit(true);
-          this.swipeDown.emit(false);
+          //this.swipeDown.emit(false);
           this.expanded = true;
         } else if (ev.deltaY > 40 && this.expanded) {
           this.swipeElement.style.transform = ``;
-          this.swipeElement.style.height = `${this.collapsedHeight}`;
+          this.swipeElement.style.height = `${this.collapsedHeight}px`;
           this.swipeElement.style.boxShadow = '';
           this.drawerState.emit(SwipeDrawerState.CLOSED);
-          this.swipeUp.emit(false);
+          //this.swipeUp.emit(false);
           this.swipeDown.emit(true);
           this.expanded = false;
         }
@@ -99,13 +96,18 @@ export class IonSwipeComponent implements OnInit {
       gesture.destroy();
     }
 
+    if (this.expanded) {
+      this.expanded = false;
+      this.toggle();
+    }
+
   }
 
   toggle() {
     if (this.expanded) {
       //this.swipeElement.style.transform = `translateY(${this.collapsedHeight}px)`;
       this.swipeElement.style.transform = ``;
-      this.swipeElement.style.height = `${this.collapsedHeight}`;
+      this.swipeElement.style.height = `${this.collapsedHeight}px`;
       this.swipeElement.style.boxShadow = '';
       this.expanded = false;
       this.swipeDown.emit(true);
