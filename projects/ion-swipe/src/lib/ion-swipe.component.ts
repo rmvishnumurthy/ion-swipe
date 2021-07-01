@@ -18,7 +18,7 @@ export class IonSwipeComponent implements OnInit {
   expandedHeight: number;
 
   @Input()
-  toolbarHeight: number = 100;
+  toolbarHeight: number;
 
   @Input()
   expanded: boolean = false;
@@ -44,6 +44,8 @@ export class IonSwipeComponent implements OnInit {
 
   ngAfterViewInit() {
     this.swipeElement = this.swipeDrawer.nativeElement;
+
+
     if (this.toolbarHeight) {
       this.expandedHeight = this.platform.height() - this.toolbarHeight;
     }

@@ -1,6 +1,6 @@
 {
   "name": "ion-swipe",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Vishnu Murthy R M",
   "peerDependencies": {
     "@angular/common": "^12.0.5",

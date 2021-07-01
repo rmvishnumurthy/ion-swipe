@@ -5,7 +5,7 @@ This library is an ionic 5 gesture library for swipe up & swipe down operations.
 ## Installation
 
 ```sh
-$ npm install ion-swipe --save
+$ npm install ion-swipe@latest --save
 ```
 
 # API
@@ -27,6 +27,40 @@ $ npm install ion-swipe --save
 | swipeStateChanged | Event triggered whenever the swipe drawer state changes from open to close & vice-versa |
 | swipeUp | Event triggered whenever the swipe drawer state changes from close to open & combined with down also to have more control |
 | swipeDown | Event triggered whenever the swipe drawer state changes from open to close & combined with open also to have more control |
+
+## Steps to use in application
+
+1. Import IonSwipeModule into the required application module.
+    ```ts
+    import { IonSwipeModule } from 'ion-swipe';
+    
+    @NgModule({
+      declarations: [AppComponent],
+      entryComponents: [],
+      imports: [IonSwipeModule],
+      providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+      bootstrap: [AppComponent],
+    })
+    export class AppModule {}
+    ```
+2. Use ngx-ion-swipe selector to add ion swipe drawer in the componet.
+    ```ts
+    <ngx-ion-swipe [expanded]="true" [toolbarHeight]="150">
+    <!-- Content to be displayed within drawer goes here -->
+      <ion-item>
+        <ion-label>test 1</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>test 2</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>test 3</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>test 4</ion-label>
+      </ion-item>
+    </ngx-ion-swipe>
+    ```
 
 ## Further help
 
